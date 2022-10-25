@@ -29,7 +29,7 @@ const Navbar = () => {
         {toggle && (
           <motion.div whileInView={{ x: [300, 0] }} transition={{ duration: 0.85, ease: 'easeOut' }}>
             <HiX onClick={() => setToggle(false)} />
-            <ul className='app__navbar-links'>
+            <ul>
               {menu.map((item) => (
                 <li key={item}>
                   <a href={`#${item}`} onClick={() => setToggle(false)}>

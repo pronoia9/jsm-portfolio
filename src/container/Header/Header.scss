@@ -41,8 +41,9 @@
   justify-content: flex-start;
   align-items: flex-start;
   height: 100%;
+  margin: 0 2rem;
 
-  @media screen and (min-width: 2000px) {
+  @media screen and (max-width: 1200px) {
     width: 100%;
     margin-right: 0rem;
   }

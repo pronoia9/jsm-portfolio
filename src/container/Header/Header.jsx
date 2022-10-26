@@ -22,7 +22,7 @@ const Header = () => {
           <div className='badge-cmp app__flex'>
             <span>👋</span>
             <div className='' style={{ marginLeft: 20 }}>
-              <p className='p-text'>Hello, I am </p>
+              <p className='p-text'>Hello, I am</p>
               <h1 className='head-text'>Jay</h1>
             </div>
           </div>
@@ -48,7 +48,7 @@ const Header = () => {
         />
       </motion.div>
 
-      <motion.div className='app__header-circles' variant={scaleVariants} whileInView={scaleVariants.whileInView}>
+      <motion.div className='app__header-circles' variants={scaleVariants} whileInView={scaleVariants.whileInView}>
         {[images.flutter, images.redux, images.sass].map((circle, index) => (
           <div className='circle-cmp app__flex' key={`circle-${index}`}>
             <img src={circle} alt='circle' />

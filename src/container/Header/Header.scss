@@ -65,4 +65,15 @@
     width: auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
+
+  .tag-cmp {
+    flex-direction: column;
+    margin-top: 3rem;
+
+    p {
+      width: 100%;
+      text-transform: uppercase;
+      text-align: right;
+    }
+  }
 }

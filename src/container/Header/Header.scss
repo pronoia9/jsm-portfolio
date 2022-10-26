@@ -5,6 +5,7 @@
   background-position: center;
   background-repeat: repeat;
 
+  // disable the default padding styles
   .app__wrapper {
     padding: 0;
 
@@ -59,11 +60,11 @@
   .badge-cmp,
   .tag-cmp {
     padding: 1rem 2rem;
-    border: var(--white-color);
+    background: var(--white-color);
     border-radius: 15px;
     flex-direction: row;
     width: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
 
   .tag-cmp {
@@ -105,7 +106,7 @@
     height: 100px;
     border-radius: 50%;
     background: var(--white-color);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 
     img {
       width: 60%;
@@ -113,6 +114,7 @@
     }
   }
 
+  // circles with different height & width
   div:nth-child(1) {
     width: 100px;
     height: 100px;
@@ -131,18 +133,18 @@
 
   @media screen and (min-width: 2000px) {
     div:nth-child(1) {
+      width: 200px;
+      height: 200px;
+    }
+    
+    div:nth-child(2) {
       width: 400px;
       height: 400px;
     }
 
-    div:nth-child(2) {
+    div:nth-child(3) {
       width: 170px;
       height: 170px;
-    }
-
-    div:nth-child(3) {
-      width: 200px;
-      height: 200px;
     }
   }
 

@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
-  
+
   .app__wrapper {
     padding: 0;
 
@@ -127,5 +127,32 @@
   div:nth-child(3) {
     width: 70px;
     height: 70px;
+  }
+
+  @media screen and (min-width: 2000px) {
+    div:nth-child(1) {
+      width: 400px;
+      height: 400px;
+    }
+
+    div:nth-child(2) {
+      width: 170px;
+      height: 170px;
+    }
+
+    div:nth-child(3) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 0;
+    div {
+      margin: 1rem;
+    }
   }
 }

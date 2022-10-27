@@ -6,9 +6,7 @@ import { urlFor, client } from '../../client';
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
-  useEffect(() => {
-    const query = '*[_type == "abouts"]';
-    client.fetch(query).then((data) => { setAbouts(data); }); }, []);
+  useEffect(() => { client.fetch('*[_type == "abouts"]').then((data) => { setAbouts(data); }); }, []);
 
   return (
     <>

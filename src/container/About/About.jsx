@@ -22,7 +22,7 @@ const About = () => {
       <div className='app__profiles'>
         {abouts.map((about, i) => (
           <motion.div
-            className='app__profile-item'
+            className='app__profiles-item'
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: 'tween' }}

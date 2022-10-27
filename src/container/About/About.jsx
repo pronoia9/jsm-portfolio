@@ -5,17 +5,17 @@ import { images } from '../../constants';
 import './About.scss';
 
 const abouts = [
-  { title: 'Web Development', description: 'I am a good web developer', imageUrl: images.about01 },
-  { title: 'Web Design', description: 'I am a good web developer', imageUrl: images.about02 },
-  { title: 'UI/UX', description: 'I am a good web developer', imageUrl: images.about03 },
-  { title: 'Web Animations', description: 'I am a good web developer', imageUrl: images.about04 },
+  { title: 'Frontend Development', description: 'I am a good web developer', imageUrl: images.about01 },
+  { title: 'Backend Development', description: 'I am a good web developer', imageUrl: images.about02 },
+  { title: 'MERN Stack', description: 'I am a good web developer', imageUrl: images.about03 },
+  { title: 'Three.js', description: 'I am a good web developer', imageUrl: images.about04 },
 ];
 
 const About = () => {
   return (
     <>
       <h2 className='head-text'>
-        I know that <span>good design</span>
+        I know that <span>good dev</span>
         <br /> means <span>good business</span>
       </h2>
 

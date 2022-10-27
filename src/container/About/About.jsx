@@ -1,17 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-import { images } from '../../constants';
 import './About.scss';
-
-const abouts = [
-  { title: 'Frontend Development', description: 'I am a good web developer', imageUrl: images.about01 },
-  { title: 'Backend Development', description: 'I am a good web developer', imageUrl: images.about02 },
-  { title: 'MERN Stack', description: 'I am a good web developer', imageUrl: images.about03 },
-  { title: 'Three.js', description: 'I am a good web developer', imageUrl: images.about04 },
-];
+import { urlFor, client } from '../../client';
 
 const About = () => {
+  const [abouts, setAbouts] = useState([]);
+  useEffect(() => { client.fetch('*[_type == "abouts"]').then((data) => { setAbouts(data); }); }, []);
+
   return (
     <>
       <h2 className='head-text'>
@@ -27,7 +23,7 @@ const About = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: 'tween' }}
             key={about.title + i}>
-            <img src={about.imageUrl} alt={about.title} />
+            <img src={urlFor(about.imgUrl)} alt={about.title} />
             <h2 className='bold-text' style={{ marginTop: 20 }}>
               {about.title}
             </h2>

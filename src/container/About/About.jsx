@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import { images } from '../../constants';
 import './About.scss';
-
-const abouts = [
-  { title: 'Frontend Development', description: 'I am a good web developer', imageUrl: images.about01 },
-  { title: 'Backend Development', description: 'I am a good web developer', imageUrl: images.about02 },
-  { title: 'MERN Stack', description: 'I am a good web developer', imageUrl: images.about03 },
-  { title: 'Three.js', description: 'I am a good web developer', imageUrl: images.about04 },
-];
+import { urlFor, client } from '../../client';
 
 const About = () => {
+  const [abouts, setAbouts] = useState([]);
+  useEffect(() => {
+    const query = '*[_type == "abouts"]';
+    client.fetch(query).then((data) => setAbouts(data));
+  }, [])
+
   return (
     <>
       <h2 className='head-text'>

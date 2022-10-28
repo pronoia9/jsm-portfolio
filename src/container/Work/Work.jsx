@@ -49,6 +49,21 @@ const Work = () => {
           <div className='app__work-item app__flex' key={i}>
             <div className='app__work-img app__flex'>
               <img src={urlFor(work.imgUrl)} alt={work.name} />
+
+              <motion.div
+                className='app__work-hover app__flex'
+                whileHover={{ opacity: [0, 1] }}
+                transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0 }}>
+                <a href={work.projectLink} target='_blank' rel='noreferrer'>
+                  <motion.div
+                    className='app__flex'
+                    whileInView={{ scale: [0, 1] }}
+                    whileHover={{ scale: [1, 0.9] }}
+                    transition={{ duration: 0.25 }}>
+                    <AiFillEye />
+                  </motion.div>
+                </a>
+              </motion.div>
             </div>
           </div>
         ))}

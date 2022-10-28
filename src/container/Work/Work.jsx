@@ -7,11 +7,20 @@ import { urlFor, client } from '../../client';
 import './Work.scss';
 
 //! TEMP
-const categories = ['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'];
+const categories = ['Web App', 'React JS', 'FullStack', 'All'];
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+  const [works, setWorks] = useState([]);
+  const [filterWork, setFilterWork] = useState([]);
+
+  useEffect(() => {
+    client.fetch('*[_type == "works"]').then((data) => {
+      setWorks(data);
+      setFilterWork(data);
+    });
+  }, []);
 
   const handleWorkFilter = () => {};
 
@@ -32,7 +41,10 @@ const Work = () => {
         ))}
       </div>
 
-      <motion.div className='' animate={animateCard}></motion.div>
+      <motion.div
+        className='app__work-portfolio'
+        animate={animateCard}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}></motion.div>
     </>
   );
 };

@@ -7,7 +7,7 @@ import { urlFor, client } from '../../client';
 import './Work.scss';
 
 //! TEMP
-const categories = ['Web App', 'React JS', 'FullStack', 'All'];
+const categories = ['Web App', 'React', 'FullStack', 'All'];
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState('All');

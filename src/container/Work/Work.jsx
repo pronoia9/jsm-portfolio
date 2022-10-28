@@ -44,7 +44,15 @@ const Work = () => {
       <motion.div
         className='app__work-portfolio'
         animate={animateCard}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}></motion.div>
+        transition={{ duration: 0.5, delayChildren: 0.5 }}>
+        {filterWork.map((work, i) => (
+          <div className='app__work-item app__flex' key={i}>
+            <div className='app__work-img app__flex'>
+              <img src={urlFor(work.imgUrl)} alt={work.name} />
+            </div>
+          </div>
+        ))}
+      </motion.div>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import { animate, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
@@ -9,10 +9,10 @@ import './Work.scss';
 const categories = ['React', 'FullStack', 'Web 3.0', 'All'];
 
 const Work = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
-  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
   const [filterWorks, setFilterWorks] = useState([]);
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
   useEffect(() => {
     client.fetch('*[_type == "works"]').then((data) => {
@@ -25,10 +25,10 @@ const Work = () => {
     setActiveFilter(item);
     setAnimateCard([{ y: 100, opacity: 0 }]);
     setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
       if (item === 'All') setFilterWorks(works);
       else setFilterWorks(works.filter((work) => work.tags.includes(item)));
-      setAnimateCard([{ y: 0, opacity: 1 }]);
-    }, 500)
+    }, 500);
   };
 
   return (
@@ -60,7 +60,7 @@ const Work = () => {
               <motion.div
                 className='app__works-hover app__flex'
                 whileHover={{ opacity: [0, 1] }}
-                transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0 }}>
+                transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}>
                 <a href={work.projectLink} target='_blank' rel='noreferrer'>
                   <motion.div
                     className='app__flex'

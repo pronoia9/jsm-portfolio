@@ -39,3 +39,10 @@
     // cursor: none;
   }
 }
+
+.app__works-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

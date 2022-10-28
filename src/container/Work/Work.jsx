@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import { motion } from 'framer-motion';
+import { animate, motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
@@ -11,6 +11,7 @@ const categories = ['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'];
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
   const handleWorkFilter = () => {};
 
@@ -25,9 +26,13 @@ const Work = () => {
           <div
             className={`app__work-filter-item app__flex p-text${activeFilter === item ? ' item-active' : ''}`}
             key={i}
-            onClick={() => handleWorkFilter(item)}></div>
+            onClick={() => handleWorkFilter(item)}>
+            {item}
+          </div>
         ))}
       </div>
+
+      <motion.div className='' animate={animateCard}></motion.div>
     </>
   );
 };

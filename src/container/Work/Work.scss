@@ -3,3 +3,12 @@
   width: 100%;
   flex-direction: column;
 }
+
+.app__works-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 4rem 0 2rem;
+}

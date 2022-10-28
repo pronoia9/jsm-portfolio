@@ -6,23 +6,30 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Work.scss';
 
-//! TEMP
-const categories = ['Web App', 'React', 'FullStack', 'All'];
+const categories = ['React', 'FullStack', 'Web 3.0', 'All'];
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
-  const [filterWork, setFilterWork] = useState([]);
+  const [filterWorks, setFilterWorks] = useState([]);
 
   useEffect(() => {
     client.fetch('*[_type == "works"]').then((data) => {
       setWorks(data);
-      setFilterWork(data);
+      setFilterWorks(data);
     });
   }, []);
 
-  const handleWorkFilter = () => {};
+  const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
+    setTimeout(() => {
+      if (item === 'All') setFilterWorks(works);
+      else setFilterWorks(works.filter((work) => work.tags.includes(item)));
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+    }, 500)
+  };
 
   return (
     <>
@@ -45,7 +52,7 @@ const Work = () => {
         className='app__works-portfolio'
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}>
-        {filterWork.map((work, i) => (
+        {filterWorks.map((work, i) => (
           <div className='app__works-item app__flex' key={i}>
             <div className='app__works-img app__flex'>
               <img src={urlFor(work.imgUrl)} alt={work.name} />

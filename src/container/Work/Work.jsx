@@ -63,6 +63,16 @@ const Work = () => {
                     <AiFillEye />
                   </motion.div>
                 </a>
+
+                <a href={work.codeLink} target='_blank' rel='noreferrer'>
+                  <motion.div
+                    className='app__flex'
+                    whileInView={{ scale: [0, 1] }}
+                    whileHover={{ scale: [1, 0.9] }}
+                    transition={{ duration: 0.25 }}>
+                    <AiFillGithub />
+                  </motion.div>
+                </a>
               </motion.div>
             </div>
           </div>

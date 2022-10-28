@@ -10,8 +10,10 @@ import './Work.scss';
 const categories = ['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'];
 
 const Work = () => {
-  const handleWorkFilter = () => { }
-  
+  const [activeFilter, setActiveFilter] = useState('All');
+
+  const handleWorkFilter = () => {};
+
   return (
     <>
       <h2 className='head-text'>
@@ -19,7 +21,12 @@ const Work = () => {
       </h2>
 
       <div className='app__work-filter'>
-        {categories.map((item, i) => (<div className='' key={i} onClick={() => handleWorkFilter(item)}></div>))}
+        {categories.map((item, i) => (
+          <div
+            className={`app__work-filter-item app__flex p-text${activeFilter === item ? ' item-active' : ''}`}
+            key={i}
+            onClick={() => handleWorkFilter(item)}></div>
+        ))}
       </div>
     </>
   );

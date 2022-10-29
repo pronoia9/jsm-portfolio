@@ -16,9 +16,7 @@ const Testimonial = () => {
     client.fetch('*[_type == "testimonials"]').then((data) => {setTestimonials(data); });
   }, []);
 
-  const handleClick = (index) => {
-    setCurrentIndex(index);
-  };
+  const handleClick = (index) => { setCurrentIndex(index); };
 
   return <div className='app__testimonial-item app__flex'></div>;
 };

@@ -22,16 +22,32 @@ const Testimonial = () => {
   return (
     <>
       {testimonials.length && (
-        <div className='app__testimonial-item app__flex'>
-          <img src={urlFor(curr.imgurl)} alt='testimonial' />
-          <div className='app__testimonial-content'>
-            <p className='p-text'>{curr.feedback}</p>
-            <div>
-              <h4 className='bold-text'>{curr.name}</h4>
-              <h5 className='p-text'>{curr.company}</h5>
+        <>
+          <div className='app__testimonial-item app__flex'>
+            <img src={urlFor(curr.imgurl)} alt='testimonial' />
+            <div className='app__testimonial-content'>
+              <p className='p-text'>{curr.feedback}</p>
+              <div>
+                <h4 className='bold-text'>{curr.name}</h4>
+                <h5 className='p-text'>{curr.company}</h5>
+              </div>
             </div>
           </div>
-        </div>
+
+          <div className='app__testimonial-btns app__flex'>
+            <div
+              className='app__flex'
+              onClick={() => handleClick(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)}>
+              <HiChevronLeft />
+            </div>
+
+            <div
+              className='app__flex'
+              onClick={() => handleClick(currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1)}>
+              <HiChevronRight />
+            </div>
+          </div>
+        </>
       )}
     </>
   );

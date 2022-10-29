@@ -6,8 +6,6 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Skills.scss';
 
-const Skills = () => {
-  return <div>Skills</div>;
-};
+const Skills = () => <></>;
 
 export default AppWrap(MotionWrap(Skills, 'app__skills'), 'skills', 'app__whitebg');

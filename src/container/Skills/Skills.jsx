@@ -7,12 +7,16 @@ import { urlFor, client } from '../../client';
 import './Skills.scss';
 
 const Skills = () => {
-  const [experiences, setExperiences] = useState([]);
+  const [experiences, setExperiences] = useState({});
   const [skills, setSkills] = useState([]);
   useEffect(() => {
-    client.fetch('*[_type == "experiences"]').then((data) => { setExperiences(data); });
-    client.fetch('*[_type == "skills"]').then((data) => { setSkills(data); });
-  }, [])
+    client.fetch('*[_type == "experiences"]').then((data) => {
+      setExperiences(data);
+    });
+    client.fetch('*[_type == "skills"]').then((data) => {
+      setSkills(data);
+    });
+  }, []);
 
   return (
     <>

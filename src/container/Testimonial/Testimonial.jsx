@@ -18,18 +18,17 @@ const Testimonial = () => {
 
   const handleClick = (index) => { setCurrentIndex(index); };
 
-  const curr = testimonials[currentIndex];
   return (
     <>
       {testimonials.length && (
         <>
           <div className='app__testimonial-item app__flex'>
-            <img src={urlFor(curr.imgurl)} alt='testimonial' />
+            <img src={urlFor(testimonials[currentIndex].imgurl)} alt={testimonials[currentIndex].name} />
             <div className='app__testimonial-content'>
-              <p className='p-text'>{curr.feedback}</p>
+              <p className='p-text'>{testimonials[currentIndex].feedback}</p>
               <div>
-                <h4 className='bold-text'>{curr.name}</h4>
-                <h5 className='p-text'>{curr.company}</h5>
+                <h4 className='bold-text'>{testimonials[currentIndex].name}</h4>
+                <h5 className='p-text'>{testimonials[currentIndex].company}</h5>
               </div>
             </div>
           </div>
@@ -40,7 +39,6 @@ const Testimonial = () => {
               onClick={() => handleClick(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)}>
               <HiChevronLeft />
             </div>
-
             <div
               className='app__flex'
               onClick={() => handleClick(currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1)}>
@@ -49,6 +47,14 @@ const Testimonial = () => {
           </div>
         </>
       )}
+
+      <div className='app__testimonial-brands app__flex'>
+        {brands.map((brand) => (
+          <motion.div whileInView={{ opacity: [0, 1] }} transition={{ duration: 0.5, type: 'tween' }} key={brand._id}>
+            <img src={urlFor(brand.imgUrl)} alt={brand.name} />
+          </motion.div>
+        ))}
+      </div>
     </>
   );
 };

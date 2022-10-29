@@ -11,7 +11,7 @@ const Skills = () => {
   const [skills, setSkills] = useState([]);
   useEffect(() => {
     client.fetch('*[_type == "experiences"]').then((data) => {
-      setExperiences(data);
+      setExperiences(data[0]);
     });
     client.fetch('*[_type == "skills"]').then((data) => {
       setSkills(data);

@@ -7,11 +7,11 @@ import { urlFor, client } from '../../client';
 import './Skills.scss';
 
 const Skills = () => {
-  const [experiences, setExperiences] = useState({});
+  const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
   useEffect(() => {
     client.fetch('*[_type == "experiences"]').then((data) => {
-      setExperiences(data[0]);
+      setExperiences(data);
     });
     client.fetch('*[_type == "skills"]').then((data) => {
       setSkills(data);
@@ -39,23 +39,30 @@ const Skills = () => {
         </motion.div>
 
         <motion.div className='app__skills-exp'>
-          {experiences?.works?.map((work, i) => (
-            <>
-              <motion.div
-                className='app__skills-exp-work'
-                whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 0.5 }}
-                data-tip
-                data-for={work.name}
-                key={work.name}>
-                <h4 className='bold-text'>{work.name}</h4>
-                <p className='p-text'>{work.company}</p>
-              </motion.div>
-              <ReactTooltip id={work.name} className='skills-tooltip' effect='solid' arrowColor='#fff'>
-                {work.description}
-              </ReactTooltip>
-            </>
-          ))}
+          {experiences?.map((experience, i) =>
+            experience?.works?.map((work, i) => (
+              <>
+                <motion.div
+                  className='app__skills-exp-work'
+                  whileInView={{ opacity: [0, 1] }}
+                  transition={{ duration: 0.5 }}
+                  data-tip
+                  data-for={work.name}
+                  key={work.name}>
+                  <h4 className='bold-text'>{work.name}</h4>
+                  <p className='p-text'>{work.company}</p>
+                </motion.div>
+                <ReactTooltip
+                  id={work.name}
+                  className='skills-tooltip'
+                  effect='solid'
+                  arrowColor='#fff'
+                  key={`tooltip-${work.name}`}>
+                  {work.description}
+                </ReactTooltip>
+              </>
+            ))
+          )}
         </motion.div>
       </div>
     </>

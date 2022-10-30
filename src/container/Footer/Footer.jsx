@@ -39,6 +39,8 @@ const Footer = () => {
             value={name}
             onChange={(e) => handleChangeInput()}
           />
+        </div>
+        <div className='app__flex'>
           <input
             className='p-text'
             type='text'
@@ -48,6 +50,7 @@ const Footer = () => {
             onChange={(e) => handleChangeInput()}
           />
         </div>
+        <div className='app__flex'></div>
       </div>
     </>
   );

@@ -7,6 +7,7 @@ import './Footer.scss';
 
 const Footer = () => {
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleChangeInput = () => {};
 
@@ -33,10 +34,18 @@ const Footer = () => {
           <input
             className='p-text'
             type='text'
-            name=''
+            name='name'
             placeholder='Your Name'
             value={name}
-            onChange={() => handleChangeInput()}
+            onChange={(e) => handleChangeInput()}
+          />
+          <input
+            className='p-text'
+            type='text'
+            name='email'
+            placeholder='Your Email'
+            value={email}
+            onChange={(e) => handleChangeInput()}
           />
         </div>
       </div>

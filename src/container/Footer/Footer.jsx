@@ -12,6 +12,8 @@ const Footer = () => {
 
   const handleChangeInput = () => {};
 
+  const handleSubmit = () => {};
+
   return (
     <>
       <h2 className='head-text'>Take a coffee & chat with me</h2>
@@ -60,6 +62,7 @@ const Footer = () => {
             onChange={(e) => handleChangeInput()}
           />
         </div>
+        <button className='p-text' type='button' onClick={handleSubmit}>Send Message</button>
       </div>
     </>
   );

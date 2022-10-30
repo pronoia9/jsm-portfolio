@@ -8,6 +8,7 @@ import './Footer.scss';
 const Footer = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleChangeInput = () => {};
 
@@ -50,7 +51,15 @@ const Footer = () => {
             onChange={(e) => handleChangeInput()}
           />
         </div>
-        <div className='app__flex'></div>
+        <div className='app__flex'>
+          <textarea
+            className='p-text'
+            placeholder='Your Message'
+            value={message}
+            name='message'
+            onChange={(e) => handleChangeInput()}
+          />
+        </div>
       </div>
     </>
   );

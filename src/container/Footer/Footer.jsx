@@ -9,6 +9,7 @@ const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { name, email, message } = formData;
 
   const handleChangeInput = () => {};
 
@@ -39,7 +40,7 @@ const Footer = () => {
             type='text'
             name='name'
             placeholder='Your Name'
-            value={formData.name}
+            value={name}
             onChange={(e) => handleChangeInput()}
           />
         </div>
@@ -49,7 +50,7 @@ const Footer = () => {
             type='text'
             name='email'
             placeholder='Your Email'
-            value={formData.email}
+            value={email}
             onChange={(e) => handleChangeInput()}
           />
         </div>
@@ -57,7 +58,7 @@ const Footer = () => {
           <textarea
             className='p-text'
             placeholder='Your Message'
-            value={formData.message}
+            value={message}
             name='message'
             onChange={(e) => handleChangeInput()}
           />

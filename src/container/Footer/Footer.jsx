@@ -11,7 +11,10 @@ const Footer = () => {
   const [loading, setLoading] = useState(false);
   const { name, email, message } = formData;
 
-  const handleChangeInput = () => {};
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const handleSubmit = () => {};
 

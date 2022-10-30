@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/jsm-portfolio/static/css/main.99f13c02.css",
+    "main.js": "/jsm-portfolio/static/js/main.e031af08.js",
+    "static/media/about04.png": "/jsm-portfolio/static/media/about04.fa7b3a72ed32b0e25bfb.png",
+    "static/media/about02.png": "/jsm-portfolio/static/media/about02.7a3df03410ee756268ec.png",
+    "static/media/about01.png": "/jsm-portfolio/static/media/about01.080509de05322b7aafda.png",
+    "static/media/bgIMG.png": "/jsm-portfolio/static/media/bgIMG.c39101e520e2997fc6d4.png",
+    "static/media/bgWhite.png": "/jsm-portfolio/static/media/bgWhite.79658cadae50b3b16ee5.png",
+    "static/media/profile.png": "/jsm-portfolio/static/media/profile.458e7cd839f6a0599fe9.png",
+    "static/media/about03.png": "/jsm-portfolio/static/media/about03.c26c2547bb1a423cf283.png",
+    "static/media/redux.png": "/jsm-portfolio/static/media/redux.1b4bb5fceb01b19da59d.png",
+    "static/media/spotify.png": "/jsm-portfolio/static/media/spotify.2b5e9be1eb1ab501e7cd.png",
+    "static/media/nb.png": "/jsm-portfolio/static/media/nb.98f3253e32cc67a4cb5e.png",
+    "static/media/git.png": "/jsm-portfolio/static/media/git.32e68255641052b72e20.png",
+    "static/media/asus.png": "/jsm-portfolio/static/media/asus.514bc34955008a92e09f.png",
+    "static/media/sass.png": "/jsm-portfolio/static/media/sass.7cdbf6b5889c42b3e490.png",
+    "static/media/adidas.png": "/jsm-portfolio/static/media/adidas.83df8153294f9137d308.png",
+    "static/media/react.png": "/jsm-portfolio/static/media/react.e3b2225bee580615f0b9.png",
+    "static/media/bolt.png": "/jsm-portfolio/static/media/bolt.64e7d9d30ece478ef3a0.png",
+    "static/media/node.png": "/jsm-portfolio/static/media/node.8683d89cf78ffae3d1f7.png",
+    "static/media/cpp.png": "/jsm-portfolio/static/media/cpp.9002a804bbfa0354d0b8.png",
+    "static/media/graphql.png": "/jsm-portfolio/static/media/graphql.0372057049181c5de51a.png",
+    "static/media/amazon.png": "/jsm-portfolio/static/media/amazon.0a8be1f53138b5c52456.png",
+    "static/media/html.png": "/jsm-portfolio/static/media/html.6e930594286d8afe4c79.png",
+    "static/media/mobile.png": "/jsm-portfolio/static/media/mobile.145d9ce0157a56f8fcd8.png",
+    "static/media/css.png": "/jsm-portfolio/static/media/css.463e319bad8e0edf1ef7.png",
+    "static/media/email.png": "/jsm-portfolio/static/media/email.37b9e890eea501421fbf.png",
+    "static/media/logo.png": "/jsm-portfolio/static/media/logo.b2d1337bbba1eedfb010.png",
+    "static/media/figma.png": "/jsm-portfolio/static/media/figma.152e55329b6f1915967e.png",
+    "static/media/skype.png": "/jsm-portfolio/static/media/skype.c8d7ee175da5b4c8a8ab.png",
+    "index.html": "/jsm-portfolio/index.html",
+    "static/media/circle.svg": "/jsm-portfolio/static/media/circle.134eeeb1e58895b892195fe8ed63bc9f.svg",
+    "main.99f13c02.css.map": "/jsm-portfolio/static/css/main.99f13c02.css.map",
+    "main.e031af08.js.map": "/jsm-portfolio/static/js/main.e031af08.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.99f13c02.css",
+    "static/js/main.e031af08.js"
+  ]
+}

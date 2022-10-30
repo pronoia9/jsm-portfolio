@@ -6,9 +6,8 @@ import { client } from '../../client';
 import './Footer.scss';
 
 const Footer = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const handleChangeInput = () => {};
 
@@ -39,7 +38,7 @@ const Footer = () => {
             type='text'
             name='name'
             placeholder='Your Name'
-            value={name}
+            value={formData.name}
             onChange={(e) => handleChangeInput()}
           />
         </div>
@@ -49,7 +48,7 @@ const Footer = () => {
             type='text'
             name='email'
             placeholder='Your Email'
-            value={email}
+            value={formData.email}
             onChange={(e) => handleChangeInput()}
           />
         </div>
@@ -57,7 +56,7 @@ const Footer = () => {
           <textarea
             className='p-text'
             placeholder='Your Message'
-            value={message}
+            value={formData.message}
             name='message'
             onChange={(e) => handleChangeInput()}
           />

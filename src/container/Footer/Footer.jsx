@@ -16,7 +16,14 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    setLoading(true);
+    const contact = { _type: 'contact', name: name, email: email, message: message };
+    client.create(contact).then((data) => {
+      setLoading(false);
+      setIsFormSubmitted(true);
+    });
+  };
 
   return (
     <>

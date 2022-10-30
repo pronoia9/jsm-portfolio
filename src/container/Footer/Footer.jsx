@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
@@ -18,11 +18,10 @@ const Footer = () => {
 
   const handleSubmit = () => {
     setLoading(true);
-    const contact = { _type: 'contact', name: name, email: email, message: message };
-    client.create(contact).then((data) => {
-      setLoading(false);
-      setIsFormSubmitted(true);
-    });
+    const contact = { _type: 'contact', name: formData.name, email: formData.email, message: formData.message };
+    client.create(contact)
+      .then(() => { setLoading(false); setIsFormSubmitted(true); })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -32,17 +31,16 @@ const Footer = () => {
         <div className='app__footer-card'>
           <img src={images.email} alt='email' />
           <a className='p-text' href='mailto:jayansin9@gmail.com'>
-            jayansin9@gmail
+            jayansin9@gmail.com
           </a>
         </div>
         <div className='app__footer-card'>
-          <img src={images.mobile} alt='mobile' />
-          <a className='p-text' href='tel:+1 123 456 789'>
-            +1 123 456 789
+          <img src={images.mobile} alt='phone' />
+          <a className='p-text' href='tel:+1 (123) 456-7890'>
+            +1 (123) 456-7890
           </a>
         </div>
       </div>
-
       {!isFormSubmitted ? (
         <div className='app__footer-form app__flex'>
           <div className='app__flex'>
@@ -52,26 +50,26 @@ const Footer = () => {
               name='name'
               placeholder='Your Name'
               value={name}
-              onChange={(e) => handleChangeInput()}
+              onChange={handleChangeInput}
             />
           </div>
           <div className='app__flex'>
             <input
               className='p-text'
-              type='text'
+              type='email'
               name='email'
               placeholder='Your Email'
               value={email}
-              onChange={(e) => handleChangeInput()}
+              onChange={handleChangeInput}
             />
           </div>
-          <div className='app__flex'>
+          <div>
             <textarea
               className='p-text'
               placeholder='Your Message'
               value={message}
               name='message'
-              onChange={(e) => handleChangeInput()}
+              onChange={handleChangeInput}
             />
           </div>
           <button className='p-text' type='button' onClick={handleSubmit}>
@@ -80,7 +78,7 @@ const Footer = () => {
         </div>
       ) : (
         <div>
-          <h3 className='head-text'>Thank you for getting in touch</h3>
+          <h3 className='head-text'>Thank you for getting in touch!</h3>
         </div>
       )}
     </>
